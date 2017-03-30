@@ -1,0 +1,602 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media all and (orientation:portrait) {div{display: block;}.landscape{display: none;}}
+@media all and (orientation:landscape) {
+                div{display: none;}
+                .landscape{display: block;width: 100%;position: relative;height: 100%; }
+                }
+.landscape span{
+    font-size: 30px;
+    width:100%;
+    height:100%;
+    position: absolute;
+    margin: auto;
+    top: 40%;
+    left: 30%;
+    color:#fff;
+}
+#music{
+    position: absolute;
+    padding: 10%;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    background-size: 75%;
+    transform: rotateZ(0deg);
+    -webkit-animation: move 4s infinite linear;
+}
+@-webkit-keyframes move {
+    to{transform:  rotateZ(360deg)}
+}
+.audiosOn{
+    background:url("../images/musicBtn.png") 50% 50% no-repeat;
+}
+.audiosOff{
+    background:url("../images/musicBtnOff.png") 50% 50% no-repeat;
+}
+/*第一页*/
+.swiper-slide .content .star img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right:0;
+}
+.star{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right:0;
+}
+.swiper-slide .content .jiantou img{
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 5%;
+    z-index: 1;
+}
+.plant{
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 5%;
+}
+.swiper-slide .content .context img{
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+}
+.swiper-slide .content .flower-one img{
+    position: absolute;
+    width: 20%;
+    left: 8%;
+    top: 10%;
+}
+.swiper-slide .content .flower-two img{
+    position: absolute;
+    width: 20%;
+    right: 5%;
+    top:25%;
+}
+.swiper-slide .content .people img{
+    position: absolute;
+    width: 100%;
+    left: 1%;
+    bottom: 25%;
+}
+.fight{
+    position: absolute;
+    width: 100%;
+    left: 10%;
+    bottom: 25%;
+}
+.swiper-slide .content section img{
+    position: absolute;
+    width: 120%;
+    height: 90%;
+    left: 10%;
+    top: 5%;
+    z-index: 5;
+}
+.cloudy{
+    position: absolute;
+    width: 120%;
+    height: 90%;
+    left: 10%;
+    top: 5%;
+}
+.swiper-slide .content footer img{
+    position: absolute;
+    width: 100%;
+    height: 28%;
+    bottom: 0;
+    left: 0;
+}
+.swiper-slide .content .jian img{
+    position: absolute;
+    width:15%;
+    right: 30%;
+    bottom: 5%;
+    -webkit-animation: upArrow 6s infinite linear;
+    animation: upArrow 6s infinite linear;
+}
+
+/*第二页*/
+.swiper-slide:nth-child(2) .night img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(2) .wasStar{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left: 100%;
+    top: -100%;
+}
+@keyframes ban {
+    0%{left: 100%;top: -100%;}
+    100%{left: 0;top: 0;}
+}
+@-webkit-keyframes ban {
+    0%{left: 100%;top: -100%;}
+    100%{left: 0;top: 0;}
+}
+.swiper-slide:nth-child(2) .my-one{
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    bottom: 50%;
+}
+.swiper-slide:nth-child(2) .my-two{
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    bottom: 35%;
+}
+.swiper-slide:nth-child(2) .jian img{
+    position: absolute;
+    width:15%;
+    height:6%;
+    right: 30%;
+    bottom: 5%;
+    -webkit-animation: upArrow 1s infinite linear;
+    animation: upArrow 1s infinite linear;
+}
+
+/*第三页*/
+.swiper-slide:nth-child(3) .early img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(3) .earlybuild .title img{
+    width: 30%;
+    height: 8%;
+    position: absolute;
+    left:5%;
+    top: 5%;
+}
+.swiper-slide:nth-child(3) .earlybuild .early-build img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(3) .morning img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(3) .starion>img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(3) .starion  .title{
+    width: 30%;
+    height: 8%;
+    position: absolute;
+    left:0;
+    top: 5%;
+    z-index:999;
+}
+.swiper-slide:nth-child(3) .starion  .title>img{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide:nth-child(3) .starion  .bus>img{
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    right:20%;
+    bottom: 20%;
+}
+.swiper-slide:nth-child(3) .starion  .waitboy>img{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    left:90%;
+    bottom: 20%;
+}
+.swiper-slide:nth-child(3) .think>img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(3) .wall>img{
+    width: 10%;
+    height: 70%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(3) .think-boy>img{
+    width: 40%;
+    height: 35%;
+    position: absolute;
+    right: -18%;
+    bottom: 45%;
+}
+
+.swiper-slide:nth-child(3) .team img:nth-child(1){
+    width: 15%;
+    height: 5%;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+}
+.swiper-slide:nth-child(3) .team img:nth-child(2){
+    width: 20%;
+    height: 7%;
+    position: absolute;
+    left: 20%;
+    top: 36%;
+}
+.swiper-slide:nth-child(3) .team img:nth-child(3){
+    width: 20%;
+    height: 7%;
+    position: absolute;
+    left: 20%;
+    top: 44%;
+}
+.swiper-slide:nth-child(3) .team img:nth-child(4){
+    width: 20%;
+    height: 7%;
+    position: absolute;
+    left: 20%;
+    top: 52%;
+}
+.swiper-slide:nth-child(3) .where img{
+    width: 50%;
+    height: 15%;
+    position: absolute;
+    right: 10%;
+    bottom: 13%;
+}
+.swiper-slide:nth-child(3) .jian img{
+    position: absolute;
+    width:15%;
+    right: 30%;
+    bottom: 3%;
+    -webkit-animation: upArrow 6s infinite linear;
+    animation: upArrow 6s infinite linear;
+}
+
+/*第四页*/
+#bidDiv{
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    position: absolute;
+    z-index:1000;
+}
+.swiper-slide:nth-child(4) .road img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.swiper-slide:nth-child(4)  #lightopen{
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    z-index:10000;
+    left: 0;
+    bottom: 0;
+    background-size: 95%;
+}
+ .lightOff{
+    background: url("../images/lightOff.png") 15% 10% no-repeat;
+     position: absolute;
+     z-index:10000;
+}
+ .lightOn{
+    background: url("../images/lightOn.png") 15% 10% no-repeat;
+     position: absolute;
+     z-index:10000;
+}
+.swiper-slide:nth-child(4) .light .title img:nth-child(1){
+    width: 50%;
+    height: 13%;
+    position: absolute;
+    right:0;
+    top: 5%;
+}
+.swiper-slide:nth-child(4) .light .title img:nth-child(2){
+    width: 65%;
+    height: 3%;
+    position: absolute;
+    left: 33%;
+    top: 35%;
+}
+#colorof{
+    width:100%;
+    height: 100%;
+    background-color: #1a7fdc;
+    position: absolute;
+    z-index:9999;
+    top:0;
+    left:0;
+    display: none;
+}
+.lightOnBg{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.weKnowYou{
+    width:50%;
+    position: absolute;
+    top:20%;
+    left:34%;
+}
+.lightFlowers{
+    width:30%;
+    position: absolute;
+    bottom:0;
+    right:5%;
+}
+/*第五张*/
+.swiper-slide:nth-child(5) .about{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(5) .footcity{
+    width: 120%;
+    height: 40%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.swiper-slide:nth-child(5) .footavatar{
+    width: 90%;
+    height: 30%;
+    position: absolute;
+    left: 10%;
+    bottom:40%;
+}
+.swiper-slide:nth-child(5) .footta{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    left: 20%;
+    bottom:15%;
+}
+.swiper-slide:nth-child(5) .foottx{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    left: 20%;
+    bottom:15%;
+}
+.swiper-slide:nth-child(5) .jian{
+    position: absolute;
+    width:15%;
+    right: 30%;
+    bottom: 5%;
+    -webkit-animation: upArrow 6s infinite linear;
+    animation: upArrow 6s infinite linear;
+}
+
+/*第六张*/
+
+.swiper-slide:nth-child(6) .run{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(6) .runpeople{
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    left: 15%;
+    bottom: 45%;
+}
+.swiper-slide:nth-child(6) .runta{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    left: 20%;
+    bottom:15%;
+}
+.swiper-slide:nth-child(6) .runtxt{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    left: 20%;
+    bottom:15%;
+}
+.swiper-slide:nth-child(6) .jian{
+    position: absolute;
+    width:15%;
+    right: 30%;
+    bottom: 5%;
+}
+/*第七张*/
+.swiper-slide:nth-child(7) .salarybg{
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    left: 5%;
+    top:5%;
+}
+.swiper-slide:nth-child(7) .salaryavatar{
+    width: 60%;
+    height: 45%;
+    position: absolute;
+    left: 20%;
+    top:10%;
+}
+.swiper-slide:nth-child(7) .salaryta{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    left: 20%;
+    bottom:15%;
+}
+
+.swiper-slide:nth-child(7) .salarytxt{
+    width: 70%;
+    height: 15%;
+    position: absolute;
+    left: 20%;
+    bottom:15%;
+}
+/*第八页*/
+.swiper-slide:nth-child(8) .introcloudy{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+.swiper-slide:nth-child(8) .introflowers{
+    width: 25%;
+    height: 22%;
+    position: absolute;
+    left:10%;
+    top: 0;
+}
+.swiper-slide:nth-child(8) .introavatar{
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    right:0;
+    bottom: 0;
+    z-index:2;
+}
+.swiper-slide:nth-child(8) .intrologo{
+    width: 60%;
+    height: 10%;
+    position: absolute;
+    left:35%;
+    top:10%;
+    z-index:2;
+}
+.swiper-slide:nth-child(8) .introstar{
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    right:25%;
+    bottom:18%;
+    z-index:2;
+}
+.swiper-slide:nth-child(8) .txt{
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    left:0;
+    bottom:10%;
+}
+.swiper-slide:nth-child(8) .jian{
+    position: absolute;
+    width:15%;
+    right: 30%;
+    bottom: 3%;
+    -webkit-animation: upArrow 6s infinite linear;
+    animation: upArrow 6s infinite linear;
+}
+
+/*第九张*/
+.swiper-slide:nth-child(9) .introcloudy{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(9) .endbg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.swiper-slide:nth-child(9) .endlogo{
+    width: 65%;
+    height: 8%;
+    position: absolute;
+    left:17%;
+    top:10%;
+}
+.swiper-slide:nth-child(9) .endtxt{
+    width: 70%;
+    height: 13%;
+    position: absolute;
+    left:15%;
+    top:25%;
+}
+.swiper-slide:nth-child(9) .endmaill{
+    width: 75%;
+    height: 5%;
+    position: absolute;
+    left:15%;
+    top:40%;
+}
+.swiper-slide:nth-child(9) .endavatar{
+    width: 80%;
+    height: 25%;
+    position: absolute;
+    left:10%;
+    top:60%;
+}
+.swiper-slide:nth-child(9) .endclick{
+    width: 50%;
+    height: 5%;
+    position: absolute;
+    left:25%;
+    top:50%;
+}
+.swiper-slide:nth-child(9) .endbottom{
+    width: 60%;
+    height: 5%;
+    position: absolute;
+    left:20%;
+    bottom:3%;
+}
