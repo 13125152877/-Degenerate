@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>主页</title>
+        <link rel="stylesheet" href="../CSS/main.css">
+        <link rel="stylesheet" href="../CSS/font_s9i8e6zlmkl9dx6r/iconfont.css">
+        <link rel="stylesheet" href="../CSS/swiper.min.css">
+    </head>
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 5.5rem;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-slide img{
+            width: 100%;
+            height: 100%;
+        }
+        #search-type{
+            position: absolute;
+            left: 0;
+            top: 1.8rem;
+            width: 100%;
+            height: 1.3rem;
+            background:rgba(0,0,0,0.4);
+            z-index: 99;
+        }
+        #search-type #search{
+            width: 80%;
+            height: 0.8rem;
+            border: 1px solid gray;
+            background: #FFFFFF;
+            margin: 0.2rem 1rem;
+            border-radius: 0.3rem ;
+        }
+        #search-type #search .iconfont{
+            margin:0.3rem ;
+        }
+        #search-type #search input{
+            width: 80%;
+            height: 0.6rem;
+            outline: none;
+            border: none;
+            margin: 0.1rem;
+        }
+
+    </style>
+    <body>
+    <div class="box" id="pohe">
+        <!--头部-->
+        <header>
+            <img src="../images/logo.gif" alt="">
+        </header>
+
+        <section>
+            <div id="search-type">
+                <div id="search">
+                    <span class="iconfont">&#xe633;</span>
+                    <input type="text" class="form-control serch" id="input"
+                           placeholder="请输入搜索内容...">
+                </div>
+            </div>
+            <!--轮播图 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="swiper-wrapper">
+                </div>
+                <!-- 轮播图上的小圆点 -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <!--主要内容-->
+            <ul id="detail">
+            </ul>
+        </section>
+        <!--底部-->
+        <footer>
+            <div class="footlogo"><a href="../HTML/main.html"><span class="iconfont">&#xe61f;</span><span class="txt">首页</span></a></div>
+            <div class="footlogo"><a href="../HTML/classify.html"><span class="iconfont">&#xe620;</span><span class="txt">分类</span></a></div>
+            <div class="footlogo"><a href="../HTML/shopping-car.html"><span class="iconfont">&#xe624;</span><span class="txt">购物车</span></a></div>
+            <div class="footlogo"><a href="../index.html"><span class="iconfont">&#xe623;</span><span class="txt">我的</span></a></div>
+        </footer>
+    </div>
+    </body>
+    <script src="../JS/swiper.min.js"></script>
+    <script src="../JS/jquery-1.8.2.js"></script>
+    <script src="../JS/base.js"></script>
+    <script src="../JS/main.js"></script>
+
+</html>

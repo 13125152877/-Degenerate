@@ -1,0 +1,81 @@
+*{margin: 0;padding:0;text-decoration: none}
+.box{
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    background:snow;
+}
+header{
+    width: 100%;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 0.8rem;
+    background:#f20553;
+}
+
+header  #btn{
+    width: 1.6rem;
+    height: 0.8rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: #FFFFFF;
+    font-size: 0.5rem;
+    background: red;
+    float: right;
+    margin-top: 0.6rem;
+    margin-right: 0.5rem;
+    outline:none;
+}
+footer{
+    width: 100%;
+    display: -webkit-box;
+    background: grey;
+}
+section{
+    -webkit-box-flex: 1;
+}
+section .formlist input{
+    width:8rem ;
+    height:1.2rem;
+    border-radius:0.3rem;
+    margin: 1rem 0 0 1.2rem;
+    font-size:0.7rem ;
+    outline:none;
+}
+section  #register{
+    width:8rem ;
+    height:1.5rem;
+    font-size:0.8rem ;
+    margin: 1rem 0 0 1.2rem;
+    border-radius: 0.3rem;
+    outline:none;
+    border: none;
+    background: red;
+}
+footer .footlogo{
+    width: 100%;
+    -webkit-box-flex: 1;
+}
+footer .footlogo a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2rem;
+}
+footer .footlogo a .iconfont{
+    position: absolute;
+    top: 0.15rem;
+    font-size: 0.9rem;
+    color: #000;
+    margin-left: 0.7rem;
+    display: inline-block;
+}
+footer .footlogo a .txt{
+    position: absolute;
+    bottom: 0.2rem;
+    color: #000;
+    font-size:0.5rem;
+    margin-left: 0.65rem;
+    display: inline-block;
+}

@@ -1,0 +1,139 @@
+*{margin: 0;padding:0;text-decoration: none;list-style: none}
+html,body{
+     font-size:14px;
+ }
+.box{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+header{
+    background: red;
+}
+header .iconfont{
+    position: absolute;
+    display: block;
+    top: 0.3rem;
+    left:0.3rem;
+    width:1.6rem ;
+    color: black;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.2rem;
+}
+header img{
+    width: 5rem;
+    height: 1rem;
+    margin:0.5rem 0 0.2rem 2.2rem;
+}
+section{
+    width: 100%;
+    -webkit-box-flex: 1;
+    overflow-y: scroll;
+}
+#colth{
+    width:100%;
+    height: 100%;
+}
+
+#colth li{
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid black;
+}
+#colth li .wer{
+    width: 100%;
+    height: 4rem;
+}
+section ul li img{
+    border: none;
+    width:3rem;
+    height: 3rem;
+    float: left;
+    margin: 0.5rem 0.3rem;
+}
+section ul li span{
+    display: block;
+    float: right;
+    width:6rem;
+    height: 3rem;
+    margin: 0.5rem 0.3rem 0.5rem 0;
+    overflow: hidden;
+}
+section ul li span p{
+    width:5.4rem;
+    height: 1.2rem;
+    line-height: 0.5rem;
+    font-size: 0.4rem;
+    margin: 0.2rem;
+}
+section ul li span .goodsdetail{
+    width: 6rem;
+    height: 1.6rem;
+}
+section ul li span .goodsdetail-left{
+    width: 2.5rem;
+    height: 1.6rem;
+    float: left;
+}
+section ul li span .goodsdetail-left strong{
+    display: block;
+    width: 3rem;
+    height: 0.5rem;
+    margin: 0 0.2rem;
+}
+section ul li span .goodsdetail-left .price{
+    color: red;
+}
+section ul li span .goodsdetail-left strong{
+    display: block;
+    width: 1.5rem;
+    height: 0.5rem;
+    margin: 0.1rem 0.3rem;
+}
+section ul li span .goodsdetail-right{
+    width: 2.5rem;
+    height: 1.6rem;
+    float: right;
+}
+section ul li span .goodsdetail-right em{
+    display: block;
+    width: 2rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+    line-height: 1rem;
+    border: 1px solid red;
+    outline: none;
+    border-radius: 0.3rem;
+}
+footer{
+    width: 100%;
+    display: -webkit-box;
+    background: grey;
+}
+footer .footlogo{
+    width: 100%;
+    -webkit-box-flex: 1;
+}
+footer .footlogo a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2rem;
+}
+footer .footlogo a .iconfont{
+    position: absolute;
+    top: 0.15rem;
+    font-size: 0.9rem;
+    color: #000;
+    margin-left: 0.7rem;
+    display: inline-block;
+}
+footer .footlogo a .txt{
+    position: absolute;
+    bottom: 0.2rem;
+    color: #000;
+    font-size:0.5rem;
+    margin-left: 0.65rem;
+    display: inline-block;
+}

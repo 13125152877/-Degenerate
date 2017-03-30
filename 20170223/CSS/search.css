@@ -1,0 +1,73 @@
+*{margin: 0;padding:0;text-decoration: none}
+.box{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+header{
+    background: #FFFFFF;
+}
+header .iconfont{
+    position: absolute;
+    display: block;
+    color: black;
+    top: 0.3rem;
+    left:0.3rem;
+    width:1.6rem ;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.2rem;
+}
+header img{
+    width: 5rem;
+    height: 1rem;
+    margin:0.5rem 0 0.2rem 2.2rem;
+}
+section{
+    -webkit-box-flex: 1;
+    overflow-y: scroll;
+}
+section #shows{
+    width: 100%;
+    height:100%;
+}
+section #shows li{
+    width: 100%;
+    font-size: 1rem;
+    border-bottom: 1px solid grey;
+}
+section #shows li a{
+    color: black;
+    margin-left: 0.5rem;
+}
+footer{
+    width: 100%;
+    display: -webkit-box;
+    background: grey;
+}
+footer .footlogo{
+    width: 100%;
+    -webkit-box-flex: 1;
+}
+footer .footlogo a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2rem;
+}
+footer .footlogo a .iconfont{
+    position: absolute;
+    top: 0.15rem;
+    font-size: 0.9rem;
+    color: #000;
+    margin-left: 0.7rem;
+    display: inline-block;
+}
+footer .footlogo a .txt{
+    position: absolute;
+    bottom: 0.2rem;
+    color: #000;
+    font-size:0.5rem;
+    margin-left: 0.65rem;
+    display: inline-block;
+}

@@ -1,0 +1,123 @@
+*{margin: 0;padding:0;text-decoration: none;list-style: none;}
+.box{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    background:snow;
+}
+header{
+    background:#f20553;
+    line-height: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+}
+header .iconfont{
+    position: absolute;
+    display: block;
+    top: 0.3rem;
+    left:0.3rem;
+    width:1.6rem ;
+    color: black;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.2rem;
+}
+section{
+    -webkit-box-flex: 1;
+    height: 100%;
+    overflow-y: scroll;
+    background: gainsboro;
+}
+section #goods-details{
+    width: 100%;
+    height: 100%;
+}
+section #goods-details li{
+    width: 100%;
+    height: 100%;
+}
+section #goods-details li img{
+    width: 100%;
+    height: 10rem;
+}
+section #goods-details li h2{
+    font-size: 0.5rem;
+    line-height: 0.8rem;
+}
+section #goods-details li .goodsdetail{
+    width: 100%;
+    height: 2.5rem;
+}
+section #goods-details li .goodsdetail-left{
+    width: 5rem;
+    float: left;
+}
+section #goods-details li .goodsdetail-right{
+    width: 5rem;
+    float: right;
+}
+section #goods-details li .goodsdetail em{
+    width: 3rem;
+    height: 0.5rem;
+    font-size: 0.5rem;
+    margin: 0.3rem;
+}
+section #goods-details li .goodsdetail .price-discount{
+    font-weight: bold;
+    color: black;
+}
+section #goods-details li .goodsdetail strong{
+    display: block;
+    width: 5rem;
+    color:red;
+    height: 0.5rem;
+    font-size: 0.5rem;
+    margin:0.2rem;
+}
+section #goods-details li .goodsdetail .iconfont{
+    width:2rem;
+    height: 1rem;
+    float: right;
+    margin:0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 0.3rem;
+    background: red;
+}
+section #goods-details li p{
+    font-size: 0.65rem;
+}
+/*底部*/
+footer{
+    width: 100%;
+    height: 2rem;
+    background: gray;
+    display: -webkit-box;
+}
+footer .footlogo{
+    width: 100%;
+    -webkit-box-flex: 1;
+}
+footer .footlogo a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2rem;
+}
+footer .footlogo a .iconfont{
+    position: absolute;
+    top: 0.15rem;
+    font-size: 0.9rem;
+    color: #000;
+    margin-left: 0.75rem;
+    display: inline-block;
+}
+footer .footlogo a .txt{
+    position: absolute;
+    bottom: 0.2rem;
+    color: #000;
+    font-size:0.5rem;
+    margin-left: 0.65rem;
+    display: inline-block;
+}

@@ -1,0 +1,129 @@
+*{margin: 0;padding:0;text-decoration: none;list-style: none;}
+.box{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    background:snow;
+}
+header{
+    background:#f20553;
+    line-height: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+}
+ #kind{
+    width: 100%;
+    height: 2rem;
+    background: gainsboro;
+    border-bottom: 1px solid grey;
+    display: -webkit-box;
+}
+ #kind a{
+    display: block;
+     font-size: 0.5rem;
+     text-align: center;
+    -webkit-box-flex: 1;
+}
+#kind a span{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    line-height: 1rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 100%;
+    margin: 0.2rem 1.1rem;
+}
+#kind a .kind-one{
+    background: red;
+}
+#kind a .kind-two{
+    background: cornflowerblue;
+}
+#kind a .kind-three{
+    background: orange;
+}
+section{
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-flex: 1;
+    height: 100%;
+    background: gainsboro;
+}
+section #classify{
+    -webkit-box-flex: 2;
+    width: 2.5rem;
+    overflow-y: scroll;
+}
+section #classify a{
+    display: block;
+    height: 1.2rem;
+    color: #000;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    line-height: 1.2rem;
+    font-size: 20px;
+}
+section #classify a:last-child{
+    border-bottom: none;
+}
+section #species{
+    -webkit-box-flex: 8;
+    width: 5rem;
+    background:snow;
+    overflow-y: scroll;
+}
+section #species .spec{
+    -webkit-box-flex: 8;
+    height: 100%;
+    overflow-y: scroll;
+}
+section #species img{
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem ;
+    float: left;
+}
+
+section #species span{
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem;
+    float: right;
+    background: pink;
+}
+/*底部*/
+footer{
+    width: 100%;
+    height: 2rem;
+    background: gray;
+    display: -webkit-box;
+}
+footer .footlogo{
+    width: 100%;
+    -webkit-box-flex: 1;
+}
+footer .footlogo a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2rem;
+}
+footer .footlogo a .iconfont{
+    position: absolute;
+    top: 0.15rem;
+    font-size: 0.9rem;
+    color: #000;
+    margin-left: 0.75rem;
+    display: inline-block;
+}
+footer .footlogo a .txt{
+    position: absolute;
+    bottom: 0.2rem;
+    color: #000;
+    font-size:0.5rem;
+    margin-left: 0.65rem;
+    display: inline-block;
+}
