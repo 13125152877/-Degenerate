@@ -1,0 +1,49 @@
+
+<ion-view title="新建">
+    <ion-nav-buttons side="right">
+       <button class="button button-clear icon ion-leaf"></button>
+
+    </ion-nav-buttons>
+    <ion-content class="padding">
+
+        <ion-list>
+            <ion-item class="item item-input span-bottom">
+                <input type="text" placeholder="标题" ng-model="writeInfo.title"/>
+            </ion-item>
+            <ion-item class="item item-input span-bottom">
+                <textarea  placeholder="内容" rows="5" cols="5" ng-model="writeInfo.des"></textarea>
+            </ion-item>
+            <ion-item class="item-button-right span-bottom">
+                提醒时间
+                <span ng-bind="writeInfo.alertTime"></span>
+                <button class="button icon button-clear button-balanced
+                ion-ios-bell-outline" ng-click="addEvent(0)"></button>
+            </ion-item>
+            <ion-item class="item-button-right span-bottom">
+              紧急状态
+              <span ng-bind="writeInfo.status.message"></span>
+                <button class="button icon button-clear button-balanced
+                ion-ios-flame" ng-click="addEvent(1)"></button>
+            </ion-item>
+            <ion-item class="item-toggle span-bottom">
+                <span ng-bind="writeInfo.Public.message"></span>
+                <label class="toggle toggle-balanced">
+                    <input type="checkbox"
+                           ng-model="writeInfo.Public.isPublic"
+                            ng-change="addEvent(3)">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </ion-item>
+            <ion-item class="item-button-right">
+                <span ng-bind="writeInfo.location.address||'定位'"></span>
+                <button class="button icon button-clear button-balanced
+                 ion-ios-location" ng-click="addEvent(2)"></button>
+            </ion-item>
+        </ion-list>
+        <button class="button button-balanced button-block" ng-click="toSave(writeInfo)">保存</button>
+
+    </ion-content>
+</ion-view>
+

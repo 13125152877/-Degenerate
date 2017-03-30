@@ -1,0 +1,9 @@
+*.mp3
+*.png
+*.jpg
+*.gif
+*.mp4
+*.zip
+*.rar
+bower_components/
+node_modules/
