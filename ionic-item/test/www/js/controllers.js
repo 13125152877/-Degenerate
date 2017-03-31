@@ -13,8 +13,80 @@ angular.module("starter.controllers",[])
           console.log(error);
         });
     })
+
+    //首页的控制器
+    .controller("recorderController",function ($scope,DBManager,$ionicLoading,$timeout,timeTool,$ionicListDelegate) {
+
+        function loadDate() {
+          $ionicLoading.show({
+            //等待视图
+            template:"正在努力加载中..."
+          });
+          //一个空数组
+          $scope.recorders=[];
+          DBManager.searchDate("SELECT * FROM book ")
+            .then(function (result) {
+              for (var i = 0; i < result.data.length; i++) {
+                var timeStamp = result.data[i].alert_time;
+
+                $scope.recorders.push(result.data[i]);
+                if ($scope.recorders[i].alert_time){
+                  $scope.recorders[i].alert_time = timeTool.HoursMinuteSecond(timeStamp);
+                  //$scope.recorders[i].alert_time = timeTool.week(timeStamp);
+
+                }
+
+              }
+              $ionicLoading.hide();
+              // 停止广播ion-refresher
+              $scope.$broadcast('scroll.refreshComplete');
+              // $scope.recorders=result.data;
+              console.log($scope.recorders);
+            }).catch(function (error) {
+            $ionicLoading.hide();
+            //如果加载失败 提示错误信息
+            $ionicLoading.show({
+              template:error.message
+            });
+            $timeout(function(){
+              $ionicLoading.hide();
+            },2000)
+          })
+        }
+        loadDate();
+        $scope.reload=function () {
+        loadDate();
+      };
+
+        $scope.deleteItem=function (info) {
+            $ionicLoading.show({
+              template:"正在删除中..."
+            });
+            DBManager.deleteDate("DELETE FROM book WHERE date="+info.date).then(function (result) {
+              $ionicLoading.hide();
+                //获得要删除元素的下标
+                var deleteIndex=$scope.recorders.indexOf(info);
+                //在数组中删除并且在数据库中删除
+                $scope.recorders.splice(deleteIndex,1);
+                $ionicListDelegate.closeOptionButtons();
+
+
+            }).catch(function (error) {
+              $ionicLoading.show({
+                template:error.message
+              });
+              $timeout(function(){
+                $ionicLoading.hide();
+              },2000)
+            });
+
+        }
+
+    })
+
+
     //录入数据页面控制器
-    .controller("RecorderWriteController",function ($scope,writeService, $ionicActionSheet,$ionicPopup,DBManager) {
+    .controller("RecorderWriteController",function ($scope,writeService, $ionicActionSheet,$ionicPopup,DBManager,$ionicNavBarDelegate) {
         /*
         * writeInfo 记录录入数据的数据模型
         * title 标题
@@ -115,6 +187,7 @@ angular.module("starter.controllers",[])
                     //console.log(index);
                     //如果是0 就是假的
                     index?saveLocal(info):saveClouds(info);
+                    $ionicNavBarDelegate.back();
                     return true;
                   }
                 })
@@ -136,6 +209,6 @@ angular.module("starter.controllers",[])
 
     })
 
-  .controller("")
+
 
 ;

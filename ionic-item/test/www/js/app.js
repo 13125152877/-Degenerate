@@ -40,7 +40,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           url:"/recorders",
           views:{
               "tab-recorders":{
-                templateUrl:"templates/recorders.html"
+                templateUrl:"templates/recorders.html",
+                controller:"recorderController"
               }
           }
       });

@@ -1,4 +1,51 @@
 angular.module("starter.services",[])
+  //添加时间相关的服务
+  .service("timeTool",function () {
+    //xxx年-xx月-xx日   12小时制（上午 下午） 周几
+    this.YearMonthDay=function (timeStamp) {
+      //把时间戳转成日期对象
+      var date=new Date(timeStamp);
+      //console.log(date);
+      var dateString=date.getFullYear()+"年-"+
+        (date.getMonth()+1)+"月-"+date.getDate()+"日";
+      //console.log(dateString);
+      return dateString;
+    };
+
+    //转成十位补0
+    function returnDecimal(num) {
+      return num>=10?num: "0"+num;
+    }
+    //xx：xx：xx
+
+    this.HoursMinuteSecond=function (timeStamp) {
+      var date=new Date(timeStamp);
+      return returnDecimal(date.getHours())
+        +":"+returnDecimal(date.getMinutes())
+        +":"+returnDecimal(date.getSeconds());
+
+    }
+
+    //上午 下午 12
+    this.amOrPm=function (timeStamp) {
+      var date=new Date(timeStamp);
+      var hours=date.getHours();
+      var ampm=hours>=12?"下午":"上午";
+      hours=hours>12?hours-12:hours;
+      return ampm+" "+hours+":"+date.getMinutes()+
+        ":"+date.getSeconds();
+    };
+
+    //周几
+    this.week=function (timeStamp) {
+      var date=new Date(timeStamp);
+      var weekNum=date.getDay();
+      var list=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+      return list[weekNum];
+    }
+
+  })
+
   .service("writeService",function () {
 
       //提醒时间
@@ -57,6 +104,7 @@ angular.module("starter.services",[])
       });
       return promise;
     }
+
       this.alertTime=alertTime;
       this.statusDanger=statusDanger;
       this.getCurLocation=getCurLocation;
@@ -117,7 +165,7 @@ angular.module("starter.services",[])
       return new Promise(function (res,reject) {
         if(self.db){
           self.db.transaction(function (ts) {
-            ts.executeSql(sql,values,function (result) {
+            ts.executeSql(sql,values,function (trans,result) {
               res({
                 code:2000,
                 message:"添加数据成功",
@@ -149,7 +197,23 @@ angular.module("starter.services",[])
     //删除的方法
     this.deleteDate=function (sql) {
       return new Promise(function (res,reject) {
-
+        self.db.transaction(function (ts) {
+          ts.executeSql(sql,[],function (trans,result) {
+            //建表成功 回应的内容
+            res({
+              code:2000,
+              message:"删除成功",
+              data:result
+            })
+          },function (error) {
+            //建表失败 回应的内容
+            reject({
+              code:2004,
+              message:"删除失败",
+              data:error
+            })
+          });
+        })
       })
     };
     //查找的方法
@@ -157,7 +221,7 @@ angular.module("starter.services",[])
       return new Promise(function (res,reject) {
         if(self.db){
           self.db.transaction(function (ts) {
-            ts.executeSql(sql,[],function (result) {
+            ts.executeSql(sql,[],function (trans,result) {
               res({
                 code:2000,
                 message:"查询数据成功",
@@ -185,6 +249,7 @@ angular.module("starter.services",[])
 
 
   })
+
 ;
 
 
