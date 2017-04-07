@@ -1,0 +1,271 @@
+ //1.全选按钮 点击｛
+    // 1.选中所有宝贝，如果所有宝贝为选中状态，则变为不选中
+    // 2.已选中宝贝数量发生改变
+    // 3.总价发生改变
+    // ｝
+    //2.排序 按钮点击｛
+    // 默认，宝贝列表，价格从⬆️到⬇️排序
+    // 然后从⬇️到⬆️排序
+    // ｝
+    //3.宝贝按钮选中框 点击｛
+    // 1.没有选中状态，变为选中状态
+    // 2.有选中状态，变为没选中状态
+    // 3.计算数量＊单价
+    // 4.总价发生改变
+    // 5.已选中宝贝数量发生改变；
+    // ｝
+    // 4.宝贝数量按钮 点击｛
+    // 1.按＋ 则数量＋1
+    // 2.按－ 则数量－1
+    // 3.为0的时候，删除当前宝贝
+    // 4.小计发生改变
+    // 5.选中框发生改变
+    // 6.总价发生改变
+    // 7.已选中宝贝发生改变
+    // ｝
+    // 5.删除 按钮 点击｛
+    // 1.删除当前宝贝的列表项
+    // 2.总价发生改变
+    // 3.已选宝贝发生改变
+    // ｝
+
+     // 全选按钮
+        var allBtn = document.querySelector(".all input");
+
+        // 排序按钮
+        var sort = document.querySelector(".sort input");
+
+        // 宝贝选中按钮
+        var pitchs = document.querySelectorAll(".list .pitch input");
+
+        // 宝贝数量加按钮
+        var num_up = document.querySelectorAll(".list .num_up");
+
+        // 宝贝数量减按钮
+        var num_down = document.querySelectorAll(".list .num_down");
+
+        // 宝贝数量
+        var num = document.querySelectorAll(".list .num");
+
+
+        // 小计
+        var total = document.querySelectorAll(".list .total");
+
+        // 删除按钮
+        var remove = document.querySelectorAll(".list .remove");
+
+        // 单价
+        var price = document.querySelectorAll(".list .price");
+
+        // 全选按钮状态开关
+        var allBtn_on = true;
+
+        // 增加按钮的数量纪录;
+        var addNum = 0;
+
+        // 减少按钮的数量纪录;
+        var minNum = 0;
+
+        // 总价
+        var priceAll = document.querySelector(".priceAll");
+
+        var allPrice = 0;
+
+        // 行数
+        var tr = document.querySelectorAll(".list tr");
+
+
+        // 已选中宝贝的数量
+        var picths_num = document.querySelector(".picths_num span");
+
+        // 宝贝数量的长度
+        var length = pitchs.length;
+
+        for(var i = 0;i<length;i++){
+            pitchs[i].index = i;
+            num_up[i].index = i;
+            num_down[i].index = i;
+            remove[i].index = i;
+
+            pitchs[i].onclick = function(){
+                if(this.checked){
+                    picths_num.innerHTML = ++picths_num.innerHTML;
+                    allPrice += Number(total[this.index].innerHTML);
+                    priceAll.innerHTML = allPrice;
+                }else{
+                    picths_num.innerHTML = --picths_num.innerHTML;
+                    allPrice -= Number(total[this.index].innerHTML);
+                    priceAll.innerHTML = allPrice;
+                }
+            }
+            num_up[i].onclick = function(){
+                addNum = 0;
+                allPrice =0;
+                var shuliang = num[this.index].innerHTML;
+                shuliang ++;
+                num[this.index].innerHTML = shuliang;
+                total[this.index].innerHTML = shuliang * (price[this.index].innerHTML);
+                if(!pitchs[this.index].checked){
+                    pitchs[this.index].checked = true;
+                }
+                for(var i = 0;i<pitchs.length;i++){
+                    if(pitchs[i].checked){
+                        addNum ++;
+                        allPrice += Number(total[i].innerHTML);
+                    }
+
+                }
+                picths_num.innerHTML = addNum;
+                priceAll.innerHTML = allPrice;
+            }
+            num_down[i].onclick = function(){
+                addNum = 0;
+                allPrice =0;
+                var shuliang = num[this.index].innerHTML;
+                shuliang --;
+                if(shuliang < 1){
+    // 执行删除操作
+                    allPrice = 0;
+                    tr[this.index].className = "hanmy";
+                    pitchs[this.index].checked = false;
+                    tr[this.index].style.display = "none";
+
+                    if(document.querySelectorAll(".hanmy").length != tr.length){
+                        for(var i = 0;i<tr.length;i++){
+                            if(!tr[i].className && pitchs[i].checked){
+                                removeNum ++;
+                                picths_num.innerHTML = removeNum;
+                                allPrice += Number(total[i].innerHTML);
+                            }
+                        }
+                    }else{
+                        console.log("1");
+                        removeNum = 0;
+                        allPrice = 0;
+                        picths_num.innerHTML = removeNum;
+                        picths_num.innerHTML = removeNum
+                    }
+
+                    priceAll.innerHTML = allPrice;
+                }else{
+                    num[this.index].innerHTML = shuliang;
+                    total[this.index].innerHTML = shuliang * (price[this.index].innerHTML);
+                    if(!pitchs[this.index].checked){
+                        pitchs[this.index].checked = true;
+                    }
+                    for(var i = 0;i<pitchs.length;i++){
+                        if(pitchs[i].checked){
+                            addNum ++;
+                            allPrice += Number(total[i].innerHTML);
+                        }
+
+                    }
+                    picths_num.innerHTML = addNum;
+                    priceAll.innerHTML = allPrice;
+                }
+
+            }
+            var removeNum = 0;
+            remove[i].onclick = function(){
+                allPrice = 0;
+                tr[this.index].className = "hanmy";
+                pitchs[this.index].checked = false;
+                tr[this.index].style.display = "none";
+
+                if(document.querySelectorAll(".hanmy").length != tr.length){
+                    for(var i = 0;i<tr.length;i++){
+                        if(!tr[i].className && pitchs[i].checked){
+                            removeNum ++;
+                            picths_num.innerHTML = removeNum;
+                            allPrice += Number(total[i].innerHTML);
+                        }
+                    }
+                }else{
+                    console.log("1");
+                    removeNum = 0;
+                    allPrice = 0;
+                    picths_num.innerHTML = removeNum;
+                    picths_num.innerHTML = removeNum
+                }
+
+                priceAll.innerHTML = allPrice;
+
+            }
+        }
+
+
+        allBtn.onclick=function(){
+
+            for(var i = 0;i<pitchs.length;i++){
+                pitchs[i].checked = this.checked;
+            }
+
+            if(allBtn_on){
+                picths_num.innerHTML = pitchs.length;
+
+                for(var j = 0;j<total.length;j++){
+                    allPrice += Number(total[j].innerHTML);
+                }
+
+                priceAll.innerHTML = allPrice;
+
+                allBtn_on = false;
+
+
+            }else{
+                picths_num.innerHTML = 0;
+                allPrice = 0;
+                priceAll.innerHTML = 0;
+                allBtn_on = true;
+            }
+
+        }
+
+        var html = "";
+        // 价格排序开关
+        var price_on = true;
+        sort.onclick=function(){
+            html = "";
+            var list = data.list;
+            if(price_on){
+                list = up(data.list);
+                price_on = false;
+            }else{
+                list = down(data.list);
+                price_on = true;
+            }
+
+
+            for(var i = 0;i<list.length;i++){
+                html +="<tr>"+
+                    "<td class='pitch'>"+
+                    "<input type='checkbox'/></td>"+
+                    "<td>"+list[i].name+"</td>"+
+                    "<td class='price'>"+list[i].price+"</td>"+
+                    "<td>"+
+                    "<div class='quantity'>"+
+                    "<span class='num_up'>+</span>"+
+                    "<var class='num'>"+list[i].num+"</var>"+
+                    "<span class='num_down'>-</span>"+
+                    "</div>"+
+                    "</td>"+
+                    "<td class='total'>"+list[i].price+"</td>"+
+                    "<td class='remove'>"+
+                    "<a href='javascript:void(0)'>删除</a>"+
+                    "</td>"+
+                    "</tr>";
+            }
+            document.querySelector(".list").innerHTML = html;
+        }
+
+
+        function up(list){
+            return list.sort(function(a,b){
+                return a.price - b.price;
+            });
+        }
+        function down(list){
+            return list.sort(function(a,b){
+                return b.price - a.price;
+            });
+        }

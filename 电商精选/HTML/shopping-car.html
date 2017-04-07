@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <link rel="stylesheet" type="text/css" href="../CSS/shopping-car.css">
+            <script src="../jQuery/jquery-3.1.1.js"></script>
+        </head>
+        <body>
+        <!--顶部-->
+        <div class="top">
+            <h2 ><a href="#" class="wer-one">你好，快去登录领取返利！</a> &nbsp;&nbsp;<a href="#">注册</a> <a href="#" class="wer"> 帮助中心</a></h2>
+        </div>
+        <!--logo部分-->
+        <div class="box">
+            <div class="content">
+                <div class="content-one">
+                    <div class="logo"></div>
+                    <div class="search">
+                        <input type="text"/>
+                        <button type="submit">搜索</button>
+                    </div>
+                </div>
+                <div class="content-two">
+                    <ul class="my-goods" >
+                        <li class="base"><a href="#" class="sale" style="color: red">全部商品<b>84</b></a></li>
+                        <li class="base"><a href="#" class="sale">降价商品<b>8</b></a></li>
+                        <li class="base"><a href="#" class="sale">库存紧张<b>0</b></a></li>
+                        <span>已选商品（不含运费）<strong class="ztotal">0.00</strong><a href="#" class="price">结算</a> </span>
+                    </ul>
+                    <!--全选-->
+                    <div class="select">
+                        <h1 class="one">
+                            <div class="lei-left">
+                                <input type="checkbox"  class="count allcheck" id="allcheck">  全选<b>商品信息</b>
+                            </div>
+
+                            <div class="lei-right">
+                                <strong>单价</strong>
+                                <strong>数量</strong>
+                                <strong>金额</strong>
+                                <strong>操作</strong>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="store">
+                        <h1 class="two">
+                            <input type="checkbox"  class="storeof choose allcheck" id="streof">
+                            店铺:<b>聚优品女装</b>
+                        </h1>
+                    </div>
+                    <ul class="store-goods" id="store-goods">
+                        <li class="chk-one">
+                            <input type="checkbox"  class="goods choose allcheck" id="goods">
+                        </li>
+                        <li class="chk-two">
+                            <a href="http://localhost:63342/%E7%94%B5%E5%95%86%E7%B2%BE%E9%80%89/HTML/shop.html?_ijt=nhb4jcpogdhlnsp1le4rhvpnsh" class="girl-colth">
+                                <img src="../images/gx01.jpg">
+                            </a>
+                            <a  href="#" class="tigt" id="tigt">秋冬新款薄款老虎头印花长袖T恤学生装<br/>女士宽松加厚套头卫衣绒衫</a>
+                            <div class="revision">
+                                <p>颜色分类：915黑色薄款</p>
+                                <p>尺码：M</p>
+                            </div>
+                        </li>
+                        <li class="one">
+                            <div class="discount">
+                                <s>￥98.00</s>
+                                <p>￥24.90</p>
+                                <span>卖家促销</span>
+                            </div>
+                        </li>
+                        <li class="two">
+                            <span class="btn">
+                                <button class="reduce" id="reduce">-</button>
+                                <input type="text"  value="1" class="numeral" id="numeral"/>
+                                <button class="jia" id="jia">+</button>
+                            </span>
+                        </li>
+                        <li class="three">
+                            <span class="total" id="total">￥<span id="dprice">24.90</span></span>
+                        </li>
+                        <li class="four">
+                            <div class="details">
+                                <a href="#" class="collect">移入收藏夹</a>
+                                <a href="#" class="delete">删除</a>
+                                <a href="#" id="similar" style="display: none">相似宝贝</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+        <script src="../JS/shopping-car.js"></script>
+        </body>
+    </html>

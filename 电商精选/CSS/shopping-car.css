@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+body{
+    width: 100%;
+    height:6000px;
+    background: pink;
+}
+/*顶部*/
+.top{
+    width: 100%;
+    background:#f9f9f9;
+    z-index: 99;
+    box-shadow:0 3px 3px grey ;
+}
+.top h2{
+    width: 1500px;
+    height:39px;
+    margin:0 auto;
+    font-size: 14px;
+    color: #000000;
+}
+.ceiling{
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.top  a{
+    font-size: 14px;
+    color: #000000;
+    line-height: 39px;
+}
+.top h2 a:hover{
+    color:#f10553;
+}
+.top .wer-one{
+    color:#f10553;
+}
+.wer{
+    float: right;
+}
+.box{
+    width: 100%;
+}
+/*主要内容*/
+.box .content{
+    width:1500px;
+    height:1000px;
+    margin: 0 auto;
+}
+.content-one{
+    width: 1500px;
+    height:132px;
+    background: #ffffff;
+}
+.content-one .logo{
+    width:420px;
+    height:132px;
+    float: left;
+    cursor: pointer;
+    background: url("../images/logo.gif") no-repeat;
+    background-position: center;
+}
+.content-one .search{
+    width:603px;
+    height:47px;
+    float: right;
+    margin-top: 27px;
+    border:2px solid #f10553;
+}
+.search input{
+    width:480px;
+    height:23px;
+    float: left;
+    margin: 12px 0 12px 16px;
+    border:none;
+    outline:none;
+}
+.search button{
+    width:90px;
+    height:47px;
+    float: right;
+    border: none;
+    background: #f10553;
+    font-size: 20px;
+    text-align: center;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+.content-two{
+    width:1500px;
+    height:1200px;
+    background: orange;
+}
+.content-two .my-goods{
+    width: 1500px;
+    height: 80px;
+    border-bottom: 1px solid grey;
+}
+.content-two .my-goods>span{
+    float: right;
+    width: 300px;
+    height: 80px;
+    line-height: 80px;
+}
+.content-two .my-goods>span strong{
+    margin-left: 20px;
+}
+.content-two .my-goods>span .price{
+    float: right;
+    width: 60px;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    color: #f1f1f1;
+    line-height: 40px;
+    background: grey;
+    border: 1px solid red;
+}
+.content-two .my-goods .base{
+    float: left;
+    padding: 25px;
+}
+.content-two .my-goods .sale{
+    color: #444444;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    padding: 0 10px;
+    border-right: 1px solid red;
+}
+.content-two .my-goods .sale b{
+    color: red;
+    margin: 0 3px;
+}
+.select{
+    height: 60px;
+    line-height: 60px;
+}
+.select .one{
+    width: 1400px;
+    height: 60px;
+    font-size: 20px;
+    color: grey;
+}
+.select .one .lei-left{
+    width: 500px;
+    height:60px;
+    float: left;
+}
+.select>.one .count{
+    width: 24px;
+    height:24px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.select>.one b{
+    margin-left: 55px;
+}
+.select>.one .lei-right{
+    width:900px ;
+    height: 60px;
+    float: left;
+}
+.select>.one strong{
+    margin-left: 140px;
+}
+.store{
+    height: 60px;
+    line-height: 40px;
+}
+.store .two{
+    width: 1400px;
+    height: 40px;
+    font-size: 20px;
+    color: grey;
+}
+.store>.two .storeof{
+    width: 24px;
+    height:24px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.store>.two b{
+    margin-left: 55px;
+}
+.store-goods{
+    width: 1500px;
+    height:200px;
+    background: springgreen;
+}
+.store-goods .chk-one{
+    width: 50px;
+    height: 200px;
+    float: left;
+}
+.store-goods .goods{
+    width: 24px;
+    height:24px;
+    margin:25px 0 0  5px;
+    cursor: pointer;
+}
+.store-goods .chk-two{
+    height: 200px;
+    float: left;
+}
+.store-goods .chk-two .girl-colth{
+    width:100px;
+    height: 100px;
+    float: left;
+    margin: 15px 0px 15px 15px;
+}
+.store-goods .chk-two .girl-colth img{
+    width: 100px;
+    height: 100px;
+}
+.store-goods .chk-two .tigt{
+    width: 410px;
+    height: 60px;
+    float: left;
+    margin:15px 0px 15px 5px;
+    font-size: 18px;
+}
+.store-goods .chk-two .revision{
+    width: 200px;
+    height: 200px;
+    float: left;
+    background: blanchedalmond;
+}
+.store-goods .chk-two .revision p{
+    width: 200px;
+    height: 15px;
+    margin: 15px;
+}
+.store-goods .one,.store-goods .two,.store-goods .three,.store-goods .four{
+    width: 178px;
+    height: 200px;
+    float: left;
+}
+.store-goods .three .total {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+.discount, .details{
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+}
+.btn,.total{
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+}
+.discount p,.discount s,.discount span{
+    font-size: 18px;
+}
+.discount s{
+    margin: 10px;
+    text-decoration: line-through;
+}
+.discount p {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.discount span{
+    width:100px;
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+.two .btn{
+    width: 150px;
+    height: 50px;
+    position: relative;
+}
+.two .btn button{
+    width: 40px;
+    height: 30px;
+}
+.two .btn .reduce{
+    position: absolute;
+    left: 0;
+    top:8px;
+}
+.two .btn .numeral{
+    width: 70px;
+    height: 40px;
+    border: 1px solid grey;
+    position: absolute;
+    left:40px;
+    text-align: center;
+}
+.two .btn .jia{
+    width: 40px;
+    height: 30px;
+    border: 1px solid #f1f1f1;
+    position: absolute;
+    left:112px;
+    top:8px;
+}
+.total .strong{
+    margin: 10px;
+}
+.details a{
+    width: 100px;
+    height: 25px;
+    color: black;
+    text-align: left;
+    line-height: 20px;
+    display: block;
+}
+
