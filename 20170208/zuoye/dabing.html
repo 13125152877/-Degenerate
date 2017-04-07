@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <style>
+                canvas{
+                    background: blueviolet;
+                }
+            </style>
+        </head>
+        <body>
+        <canvas width="500px" height="500px" id="cav"></canvas>
+        <script>
+            var cav=document.getElementById("cav");
+            var content=cav.getContext("2d");
+            content.beginPath();
+            content.lineTo(200,200);
+            content.arc(200,200,100,-Math.PI/6,-2*Math.PI/3,true);
+            content.fillStyle="pink";
+            content.fill();
+            content.closePath();
+
+            content.beginPath();
+            content.lineTo(200,200);
+            content.arc(200,200,100,-2*Math.PI/3,-10*Math.PI/9,true);
+            content.fillStyle="blue";
+            content.fill();
+            content.closePath();
+
+            content.beginPath();
+            content.lineTo(200,200);
+            content.arc(200,200,100,-10*Math.PI/9,-4*Math.PI/3,true);
+            content.fillStyle="yellow";
+            content.fill();
+            content.closePath();
+
+            content.beginPath();
+            content.lineTo(200,200);
+            content.arc(200,200,100,-4*Math.PI/3,-Math.PI/6,true);
+            content.fillStyle="yellowgreen";
+            content.fill();
+            content.closePath();
+        </script>
+        </body>
+    </html>

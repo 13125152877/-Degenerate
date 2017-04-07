@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500px" height="500px" id="cav"></canvas>
+<!--给canvas设置margin:0 auto不起作用，讲canvas放在div里设置居住就行-->
+<script>
+    var cav=document.getElementById("cav");
+    var content=cav.getContext("2d");
+        function drow() {
+            var r=Math.floor(Math.random()*256);
+            var g=Math.floor(Math.random()*256);
+            var b=Math.floor(Math.random()*256);
+            var x=Math.random()*500;
+            var y=Math.random()*500;
+            var w=Math.random()*100;
+            var h=Math.random()*100;
+            content.lineWidth=Math.floor(Math.random()*5);//绘制的线宽度
+            content.strokeStyle="rgb("+r+","+g+","+b+")";
+            content.strokeRect(x,y,w,h);
+
+        }
+        setInterval(drow,1000);
+
+</script>
+</body>
+</html>

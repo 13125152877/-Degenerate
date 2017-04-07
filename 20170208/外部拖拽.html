@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+        </head>
+        <body>
+            <audio id="aud" controls="controls"></audio>
+            <script>
+                function init() {
+                    var aud=document.getElementById("aud");
+                    document.addEventListener("dragover",function (event) {
+                        event.preventDefault()
+                    });
+                    document.addEventListener("drop",function (event) {
+                        event.preventDefault()
+                        console.log(1);
+                        console.log(event.dataTransfer.files);
+                        var file=event.dataTransfer.files[0];
+                        if(file.type=="audio/mp3"){
+                            aud.src=file.name;
+                        }
+                    });
+
+                }
+                init();
+            </script>
+        </body>
+    </html>

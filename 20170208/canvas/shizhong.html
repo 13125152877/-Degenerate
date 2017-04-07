@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <style>
+                canvas{
+                    background: pink;
+                }
+            </style>
+        </head>
+        <body>
+            <canvas width="500px" height="500px" id="cav"></canvas>
+            <!--给canvas设置margin:0 auto不起作用-->
+            <script>
+                var cav=document.getElementById("cav");
+                var con=cav.getContext("2d");
+                function timer() {
+                    con.clearRect(0,0,500,500);
+                    con.beginPath();
+                    con.arc(250,250,200,0,2*Math.PI);
+                    con.strokeStyle="yellow";
+                    con.lineWidth=10;
+                    con.closePath();
+                    con.stroke();
+
+
+                    function drawpan(num,color,width,angle,move) {
+                        //分针格
+                        for(var i=0;i<60;i++){
+                            con.save();
+                            con.beginPath();
+                            con.strokeStyle=color;
+                            con.lineWidth=width;
+                            con.translate(250,250);
+                            con.rotate(i*angle*Math.PI/180);
+                            con.moveTo(0,move);
+                            con.lineTo(0,-192);
+                            con.closePath();
+                            con.stroke();
+                            con.restore();
+                        }
+                    }
+                    drawpan(60,"black",5,6,-180);
+                    drawpan(12,"green",8,30,-170);
+
+                    var now=new Date();
+                    var h=now.getHours();
+                    var m=now.getMinutes();
+                    var s=now.getSeconds();
+
+                    function drowzhen(color,width,time,angle,move) {
+                        con.save();
+                        con.beginPath();
+                        con.strokeStyle = color;
+                        con.lineWidth = width;
+                        con.translate(250,250);
+                        con.rotate(time*angle*Math.PI/180);
+                        con.moveTo(0,move);
+                        con.lineTo(0,10);
+                        con.closePath()
+                        con.stroke();
+                        con.restore();
+                    }
+                    drowzhen("red",2,s,6,-160);
+                    drowzhen("green",4,(m+s/60),6,-130);
+                    drowzhen("blue",4,(h+m/60),30,-110);
+                }
+
+                timer();
+                setInterval(timer,1000)
+
+
+
+
+            </script>
+        </body>
+    </html>

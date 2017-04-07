@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500px" height="500px" id="cav"></canvas>
+<!--给canvas设置margin:0 auto不起作用-->
+<script>
+    var cav=document.getElementById("cav");
+    var content=cav.getContext("2d");
+    cav.onmousedown=function (event) {
+        var event=event;
+        content.strokeStyle="#fff";
+        content.lineWidth=10;
+        content.moveTo(event.clientX-cav.offsetLeft,event.clientY-cav.offsetTop);
+        cav.onmousemove=function (event) {
+            var event=event;
+            content.lineTo(event.clientX-cav.offsetLeft,event.clientY-cav.offsetTop);
+            content.stroke();
+        }
+        cav.onmouseup=function () {
+            cav.onmouseup=null;
+            cav.onmousemove=null;
+        }
+    }
+</script>
+</body>
+</html>

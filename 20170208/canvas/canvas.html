@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <style>
+                canvas{
+                    background: pink;
+                }
+            </style>
+        </head>
+        <body>
+            <canvas width="500px" height="500px" id="cav"></canvas>
+            <!--给canvas设置margin:0 auto不起作用-->
+            <script>
+                var cav=document.getElementById("cav");
+                var content=cav.getContext("2d");
+//                //content.strokeRect(100,100,200,200);//空心
+//                //content.fillRect(100,100,200,200);//实心
+//                content.fillStyle="red";
+//                content.rect(100,100,200,200);
+//                content.fill();
+                content.beginPath();
+                content.moveTo(0,0);
+                content.lineTo(500,500);
+                content.lineTo(100,300);
+                content.lineTo(200,100);
+                content.lineTo(300,400);
+                content.stroke();
+            </script>
+        </body>
+    </html>

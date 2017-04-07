@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500px" height="500px" id="cav"></canvas>
+<!--给canvas设置margin:0 auto不起作用-->
+<script>
+    var cav=document.getElementById("cav");
+    var content=cav.getContext("2d");
+    content.beginPath();
+    content.arc(250,250,200,-Math.PI/6,-5*Math.PI/6,true);
+    content.lineWidth=5;
+    content.strokeStyle="yellow";
+
+
+    content.arc(250,250,100,-5*Math.PI/6,-Math.PI/6,false);
+    content.strokeStyle="yellow";
+
+    content.arc(250,250,200,-Math.PI/6,-5*Math.PI/6,true);
+    content.strokeStyle="yellow";
+
+//    content.stroke();
+//    content.closePath();
+//    content.beginPath();
+//    content.lineWidth=10;
+//    content.arc(100,100,100,0,Math.PI,true);
+    content.stroke();
+    content.closePath();
+
+</script>
+</body>
+</html>
