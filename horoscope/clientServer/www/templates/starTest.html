@@ -4,33 +4,366 @@
     <button class="button button-clear icon ion-leaf"></button>
   </ion-nav-buttons>-->
 
-  <ion-content >
+  <ion-content has-bouncing="false">
     <!--星测试轮播图-->
-       <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
-         <ion-slide>
-           <div class="box blue"><img src="img/lunbo01.jpg" alt=""></div>
-         </ion-slide>
-         <ion-slide>
-           <div class="box yellow"><img src="img/lunbo02.jpg" alt=""></div>
-         </ion-slide>
-       </ion-slide-box>
-  <!--  <ion-list>
-     <ion-item>-->
-       <div class="row">
-         <div class="col-33 button button-clear">
-          <button class="col-15 button icon ion-star balanced botton_circle"></button>
-         </div>
-         <div class="col-33 button button-clear">
-           <button class="col-15 button icon ion-heart energized  botton_circle"></button>
-         </div>
-         <div class="col-33 button button-clear">
-           <button class="col-15 button icon assertive
-           ion-ios-pulse-strong botton_circle"></button>
-         </div>
-       </div>
-   <!--  </ion-item>
-   </ion-list>-->
-  </ion-content>
+    <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
+      <ion-slide>
+        <div class="box blue"><img src="img/lunbo01.jpg" alt=""></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow"><img src="img/lunbo02.jpg" alt=""></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow"><img src="img/lunbo02.jpg" alt=""></div>
+      </ion-slide>
+    </ion-slide-box>
+    <!--跳转按钮-->
+    <div class="row">
+      <div class="col-33 button button-clear">
+        <span class="col-15 button icon ion-star energized botton_circle"></span>
+      </div>
+      <div class="col-33 button button-clear">
+        <span class="col-15 button icon ion-heart calm  botton_circle"></span>
+      </div>
+      <div class="col-33 button button-clear">
+           <span class="col-15 button icon assertive
+           ion-ios-pulse-strong botton_circle"></span>
+      </div>
+    </div>
+    <div class="row context">
+      <div class="col-33 txt">
+        星座专区
+      </div>
+      <div class="col-33 txt">
+        爱情
+      </div>
+      <div class="col-33 txt">
+        心理测试
+      </div>
+    </div>
 
+    <ion-list>
+      <ion-item class="item-icon-left context">
+        <span class="col-15 icon ion-volume-medium calm"></span>
+        <span class="calm">最新公告</span>
+        <p>啦啦啦啦啦绿绿绿绿绿绿绿绿绿绿绿绿绿.....</p>
+      </ion-item>
+      <ion-item class="item-button-right context">
+        <span class="calm">双子座运势</span>
+        <a class="button icon-left ion-android-sync button-clear button-calm">切换</a>
+      </ion-item>
+    </ion-list>
+    <!--星座测试-->
+    <div style="display:flex;width:100%;">
+      <div style="flex:1;text-align: center;" class="tab_default" ng-repeat="item in tabNames" ng-class="slectIndex==$index ? 'tab_select' : '' ">
+        {{item}}
+        <div class="arrow-top" ng-show="slectIndex==$index"></div>
+      </div>
+    </div>
+    <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="slideIndex" does-continue="false" show-pager="false">
+      <ion-slide>
+        <div class="count_txt">
+          <p class="calm txt padding-top">2017年04月19日</p>
+              <ul class="padding-left">
+                <li>
+                  <span>整体运势:</span>
+                  <a class="icon calm ion-ios-star"></a>
+                  <a class="icon calm ion-ios-star"></a>
+                  <a class="icon calm ion-ios-star-half"></a>
+                  <a class="icon calm ion-ios-star-outline"></a>
+                  <a class="icon calm ion-ios-star-outline"></a>
+                </li>
+                <li>
+                  <span>事业学业:</span>
+                  <a class="icon calm ion-ios-star"></a>
+                  <a class="icon calm ion-ios-star-half"></a>
+                  <a class="icon calm ion-ios-star-outline"></a>
+                  <a class="icon calm ion-ios-star-outline"></a>
+                  <a class="icon calm ion-ios-star-outline"></a>
+                </li>
+                <li>
+                  <span>健康指数:</span>
+                  <a class="calm">90%</a>
+                </li>
+                <li>
+                  <span>幸运颜色:</span>
+                  <a class="calm">青色</a>
+                </li>
+                <li>
+                  <span>速配星座:</span>
+                  <a class="calm">双子座</a>
+                </li>
+                <li>
+                <span>爱情运势:</span>
+                  <a class="icon calm ion-ios-star"></a>
+                  <a class="icon calm ion-ios-star"></a>
+                  <a class="icon calm ion-ios-star"></a>
+                  <a class="icon calm ion-ios-star-half"></a>
+                  <a class="icon calm ion-ios-star-outline"></a>
+              </li>
+                <li>
+                  <span>财富运势:</span>
+                  <a class="icon calm ion-ios-star"></a>
+                  <a class="icon calm ion-ios-star"></a>
+                  <a class="icon calm ion-ios-star-half"></a>
+                  <a class="icon calm ion-ios-star-outline"></a>
+                  <a class="icon calm ion-ios-star-outline"></a>
+                </li>
+                <li>
+                  <span>智商指数:</span>
+                  <a class="calm">83%</a>
+                </li>
+                <li>
+                  <span>幸运数字:</span>
+                  <a class="calm">6</a>
+                </li>
+              </ul>
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="count_txt">
+          <p class="calm txt padding-top">2017年04月20日</p>
+          <ul class="padding-left">
+            <li>
+              <span>整体运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>事业学业:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>健康指数:</span>
+              <a class="calm">90%</a>
+            </li>
+            <li>
+              <span>幸运颜色:</span>
+              <a class="calm">青色</a>
+            </li>
+            <li>
+              <span>速配星座:</span>
+              <a class="calm">双子座</a>
+            </li>
+            <li>
+              <span>爱情运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>财富运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>智商指数:</span>
+              <a class="calm">83%</a>
+            </li>
+            <li>
+              <span>幸运数字:</span>
+              <a class="calm">6</a>
+            </li>
+          </ul>
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="count_txt ">
+          <p class="calm txt padding-top">2017年04月19日~2017年04月26日</p>
+          <ul class="padding-left">
+            <li>
+              <span>整体运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>事业学业:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>健康指数:</span>
+              <a class="calm">90%</a>
+            </li>
+            <li>
+              <span>幸运颜色:</span>
+              <a class="calm">青色</a>
+            </li>
+            <li>
+              <span>速配星座:</span>
+              <a class="calm">双子座</a>
+            </li>
+            <li>
+              <span>爱情运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>财富运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>智商指数:</span>
+              <a class="calm">83%</a>
+            </li>
+            <li>
+              <span>幸运数字:</span>
+              <a class="calm">6</a>
+            </li>
+          </ul>
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="count_txt">
+          <p class="calm txt padding-top">2017年04月19日~2017年05月19日</p>
+          <ul class="padding-left">
+            <li>
+              <span>整体运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>事业学业:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>健康指数:</span>
+              <a class="calm">90%</a>
+            </li>
+            <li>
+              <span>幸运颜色:</span>
+              <a class="calm">青色</a>
+            </li>
+            <li>
+              <span>速配星座:</span>
+              <a class="calm">双子座</a>
+            </li>
+            <li>
+              <span>爱情运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>财富运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>智商指数:</span>
+              <a class="calm">83%</a>
+            </li>
+            <li>
+              <span>幸运数字:</span>
+              <a class="calm">6</a>
+            </li>
+          </ul>
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="count_txt">
+          <p class="calm txt padding-top">2017年04月19日~2018年04月19日</p>
+          <ul class="padding-left">
+            <li>
+              <span>整体运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>事业学业:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>健康指数:</span>
+              <a class="calm">90%</a>
+            </li>
+            <li>
+              <span>幸运颜色:</span>
+              <a class="calm">青色</a>
+            </li>
+            <li>
+              <span>速配星座:</span>
+              <a class="calm">双子座</a>
+            </li>
+            <li>
+              <span>爱情运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>财富运势:</span>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star"></a>
+              <a class="icon calm ion-ios-star-half"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+              <a class="icon calm ion-ios-star-outline"></a>
+            </li>
+            <li>
+              <span>智商指数:</span>
+              <a class="calm">83%</a>
+            </li>
+            <li>
+              <span>幸运数字:</span>
+              <a class="calm">6</a>
+            </li>
+          </ul>
+
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+
+  </ion-content>
 
 </ion-view>

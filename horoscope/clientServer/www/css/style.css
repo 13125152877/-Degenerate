@@ -16,10 +16,49 @@ html,body{
   font-family:"shiguangti";
   src:url(../font/shiguangti.ttf);
 }
-/*.box>img{
-  width: 100%;
-  height: 100%;
-}*/
+
 .botton_circle{
   border-radius: 50%;
+}
+.txt{
+  text-align: center;
+}
+.context{
+  border-bottom:3px solid #efeff4 ;
+}
+.tab_default{
+  border-bottom:solid 1px #F2F2F2;
+  padding:6px 0;
+}
+.tab_select{
+  border-bottom:solid 1px #3E89F5;
+  box-shadow:0 -3px 8px #C1D3F0 inset;
+}
+.arrow-top {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top:20px;
+  border: 6px solid #3E89F5;
+  border-right-color:transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+.arrow-top:after {
+  content:'';
+  position:absolute;
+  width: 0;
+  height: 0;
+  border: 12px solid #fff;
+  right: -12px;
+  bottom: -13px;
+  border-right-color:transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+.count_txt>p{
+  font-size: 16px;
+}
+ul>li>span{
+  font-size: 18px;
 }
