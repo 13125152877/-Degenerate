@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <style>
+                /*给父元素设置*/
+                *{
+                    margin: 0;
+                    padding: 0;
+                }
+                #box{
+                    transform-style: preserve-3d;
+                    perspective: 500px;
+                    border:1px solid #ccc ;
+                    margin: 50px auto;
+                    width: 500px;
+                    height: 500px;
+                }
+                #section{
+                    width: 500px;
+                    height: 500px;
+                    background: pink;
+                   -webkit-animation: move 2s;
+                }
+                @-webkit-keyframes move {
+                    to{transform:rotateX(90deg); }
+                }
+            </style>
+        </head>
+        <body>
+            <div id="box">
+                <div id="section"></div>
+            </div>
+        </body>
+    </html>

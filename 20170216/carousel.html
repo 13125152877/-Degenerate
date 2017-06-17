@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <style>
+                *{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+                div{
+                    width: 320px;
+                    height: 232px;
+                    margin:50px  auto;
+                    position: relative;
+                    overflow: hidden;
+                }
+                li{
+                    float: left;
+                    width: 320px;
+                    height: 232px;
+                }
+                #OUL{
+                    width: 1600px;
+                    left: 0;
+                }
+                ul{
+                    overflow: hidden;
+                    position: absolute;
+                }
+                #btn{
+                    left:20px;
+                    bottom: 10px;
+                }
+                #btn li{
+                    width: 30px;
+                    height: 30px;
+                    margin-left:30px;
+                    text-align: center;
+                    line-height: 30px;
+                    background:rgba(0,0,0,0.4);
+                }
+                #turnleft,#turnright{
+                    position: absolute;
+                    top:50%;
+                    margin-top: -30px;
+                    text-align: center;
+                    line-height: 30px;
+                    background: rgba(0,0,225,0.4);
+                    width: 30px;
+                    height: 30px;
+                    display: none;
+                }
+                #turnleft{
+                    left: 20px;
+                }
+                #turnright{
+                    right: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="outer">
+                <ul style="transition: all 1s linear;" id="OUL">
+                    <li><img src="images/01.jpg"/></li>
+                    <li><img src="images/02.jpg"/></li>
+                    <li><img src="images/03.jpg"/></li>
+                    <li><img src="images/04.jpg"/></li>
+                    <li><img src="images/01.jpg"/></li>
+                </ul>
+                <ul id="btn">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <span id="turnleft">&lt;</span>
+                <span id="turnright">&gt;</span>
+            </div>
+        </body>
+        <script>
+            var outer=document.getElementById("outer");
+            var OUL=document.getElementById("OUL");
+            var btns=document.getElementById("btn").getElementsByTagName("li");
+            var change=document.getElementsByTagName("span");
+            banner(outer,OUL,btns,change,320,2000);
+            function banner(outer,OUL,btns,change,banwidth,duration) {
+                //外层div 包裹图片的ul 切换按钮 左右按钮 图片宽度 轮播时长
+                var page=0;//记录我的下标
+                var maxpage=btns.length;
+                var timer;
+                var timer1;
+                timer=setInterval(move,duration);
+                function move() {
+                    page++;
+                    if(page>maxpage){
+                        OUL.style.transition="";
+                        OUL.style.left="0px";
+                        page=0;
+                        timer1= setTimeout(function () {
+                            page++;
+                            OUL.style.left=page*(-banwidth)+"px";
+                            OUL.style.transition="all 1s linear";
+                        },10)
+                    }
+                    OUL.style.left = page*(-banwidth)+"px";
+                }
+                //鼠标放在下面的小方块上
+                for(var i=0;i<btns.length;i++){
+                    btns[i].index=i;
+                    btns[i].onmousemove=function () {
+                        page=this.index;
+                        OUL.style.left=page*(-banwidth)+"px";
+                    }
+                }
+                outer.onmousemove=function () {
+                    clearInterval(timer);
+                    clearTimeout(timer1);
+                    change[0].style.display="block";
+                    change[1].style.display="block";
+                }
+                outer.onmouseout=function () {
+                    timer=setInterval(move,duration);
+                    change[0].style.display="none";
+                    change[1].style.display="none";
+                }
+                //点击左右
+                change[0].onclick=function () {
+                    page--;
+                    if(page<0){
+                        OUL.style.transition="";
+                        page=maxpage;
+                        timer1=setTimeout(function () {
+                            page--;
+                            OUL.style.transition="all 1s linear";
+                            OUL.style.left=page*(-banwidth)+"px";
+                        },10)
+                    }
+                    OUL.style.left=page*(-banwidth)+"px";
+                }
+
+                change[1].onclick=function () {
+                    page++;
+                    if(page>maxpage){
+                        OUL.style.transition="";
+                        page=0;
+                        timer1=setTimeout(function () {
+                            page++;
+                            OUL.style.transition="all 1s linear";
+                            OUL.style.left=page*(-banwidth)+"px";
+                        },10)
+                    }
+                    OUL.style.left=page*(-banwidth)+"px";
+                }
+            }
+
+        </script>
+    </html>

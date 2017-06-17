@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <style type="text/css" media="screen">
+                /* 公用样式 */
+                body {
+                    margin: 0;
+                    height: 0;
+                    background-color: #F1F1F1;
+                }
+                .warp {
+                    width: 250px;
+                    height: 150px;
+                    background-color: #5e7c87;
+                    float: left;
+                    margin: 15px 15px;
+                    box-shadow: 10px 10px 5px #888888;
+                }
+                .sim-button {
+                    line-height: 50px;
+                    height: 50px;
+                    text-align: center;
+                    margin-right: auto;
+                    margin-left: auto;
+                    margin-top: 50px;
+                    width: 60%;
+                    cursor: pointer;
+                    color: rgba(255, 255, 255, 1);
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                }
+                .button1 {
+                    -webkit-transition: all 0.5s;
+                    transition: all 0.5s;
+                }
+                .button1:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    border-radius: 20px;
+                }
+                /* 效果2 */
+
+                .button2 {
+                    -webkit-transition: all 0.5s;
+                    transition: all 0.5s;
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                .button2:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+                .button2>span {
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+
+                .button2:hover>span {
+                    opacity: 0;
+                }
+
+                .button2::after {
+                    content: attr(data-text);
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: -50px;
+                    top: 0;
+                    opacity: 0;
+                    -webkit-transition: all 0.5s;
+                    transition: all 0.5s;
+                }
+
+                .button2:hover::after {
+                    left: 0;
+                    opacity: 1;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="warp">
+                <div class="sim-button button1">
+                    <span>login1</span>
+                </div>
+            </div>
+
+            <div class="warp">
+                <div class="sim-button button2" data-text="login2">
+                    <span>login2</span>
+                </div>
+            </div>
+        </body>
+    </html>

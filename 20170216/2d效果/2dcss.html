@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <style>
+                *{
+                    margin: 0;
+                    padding: 0;
+                }
+                div{
+                    overflow: hidden;
+                    width: 20%;
+                    height: 400px;
+                    float: left;
+                    border: 1px solid red;
+                    position: relative;
+                }
+                h2,p,img{
+                    transition: all 2s;
+                    color: yellow;
+                }
+                /*第一张图效果*/
+                div:nth-child(1) h2,div:nth-child(1) p{
+                    position: absolute;
+                    left: 50px;
+                }
+                div:nth-child(1) h2{
+                    top:300px;
+                }
+                div:nth-child(1):hover img{
+                    transform: translateX(-100px);
+                    opacity: 0.3;
+                }
+                div:nth-child(1):hover p{
+                    transform: translateY(-100px);
+                }
+                /*第二张图效果*/
+                div:nth-child(2) p{
+                    background: #ccc;
+                    position: absolute;
+                    transform: translateX(-300px);
+                    padding: 2px 15px;
+                    left: 0;
+                }
+                div:nth-child(2) h2{
+                    position: absolute;
+                    left: 80px;
+                    top: 100px;
+                }
+                div:nth-child(2) .p1{
+                    top:200px;
+                }
+                div:nth-child(2) .p2{
+                    top:230px;
+                    transition-delay: 2s;
+                }
+                div:nth-child(2) .p3{
+                    top:260px;
+                    transition-delay: 2s;
+                }
+                div:nth-child(2):hover p{
+                    transform: translateX(50px);
+                }
+                /*第三张图效果*/
+                div:nth-child(3) p{
+                    border:2px solid #FFFFFF ;
+                    position: absolute;
+                    width: 200px;height: 200px;
+                    left: 0;top: 0;
+                    transform:translateX(-150px) translateY(-150px) rotate(0deg);
+                }
+                div:nth-child(3):hover p{
+                    transform:translateX(100px) translateY(100px) rotate(360deg);
+                }
+            </style>
+        </head>
+        <body>
+            <div>
+                <img src="./images/b01.jpg">
+                <h2>平移动画</h2>
+                <p>简单CSS3过渡效果</p>
+            </div>
+            <div>
+                <img src="./images/b02.jpg">
+                <h2>平移动画</h2>
+                <p class="p1">多条文字简介</p>
+                <p class="p2">利用动画延迟</p>
+                <p class="p3">逐一飞出</p>
+            </div>
+            <div>
+                <img src="./images/b03.jpg">
+                <p>简单CSS3旋转效果</p>
+            </div>
+            <div>
+                <img src="./images/b04.jpg">
+                <h2>平移动画</h2>
+                <p>简单CSS3过渡效果</p>
+            </div>
+        </body>
+    </html>

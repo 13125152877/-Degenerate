@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{margin: 0;padding: 0;}
+		div{
+			overflow: hidden;
+			width: 33%;
+			height: 400px;
+			position: relative;
+			float: left;
+		}
+		h2,p,img,span{transition: all 4s linear;color: #FFFFFF;}
+		div:nth-child(1) h2,div:nth-child(1) p{
+			position: absolute;
+			left: 50px;
+		}
+		div:nth-child(1) h2{
+			top:200px;
+		}
+		div:nth-child(1):hover img{
+			transform: translateX(-100px);
+			opacity: 0.5;
+		}
+		div:nth-child(1):hover h2{
+			transform: translateY(-50px);
+		}
+		div:nth-child(1):hover p{
+			transform: translateY(-200px);
+		}
+		div:nth-child(2) p{
+			background: #FFF;
+			position: absolute;
+			transform: translateX(-300px);
+			padding: 2px 15px;
+			left: 0;
+		}
+		div:nth-child(2) .p1{
+			top:140px;
+		}
+		div:nth-child(2) .p2{
+			top:170px;
+			transition-delay: 1s;
+		}
+		div:nth-child(2) .p3{
+			top:200px;
+			transition-delay: 2s;
+		}
+		div:nth-child(2):hover p{
+			transform: translateX(50px);
+		}
+		div:nth-child(3) p{
+			background: #FFF;
+			position: absolute;
+			left: 0;
+		}
+		div:nth-child(3) .p1{
+			width: 500px;
+			height: 200px;
+			transform-origin: left top;
+		}
+		div:nth-child(3):hover .p1{
+			
+			transform: rotate(-15deg) translateY(-30px);
+		}
+		div:nth-child(4) p{
+			border:2px solid #FFFFFF ;
+			position: absolute;
+			width: 200px;height: 200px;
+			left: 0;top: 0;
+			transform:translateX(-300px) translateY(-300px) rotate(0deg);
+		}
+		div:nth-child(4):hover p{
+			transform:translateX(100px) translateY(100px) rotate(360deg);
+		}
+		div:nth-child(5) p{
+			font-size: 40px;
+			position: absolute;
+			left: 30px;top: 200px;
+			transform:skew(90deg);
+		}
+		div:nth-child(5):hover p{
+			transform:skew(0deg);
+		}
+		div:nth-child(6) span{
+			font-size: 40px;
+			position: absolute;
+			width: 200px;
+			height: 200px;
+		}
+		.box1{
+			transform: scaleX(0);
+			top:120px;
+			left:130px;
+			border-top:2px solid #FFFFFF;
+			border-bottom:2px solid #FFFFFF;
+		}
+		.box2{
+			transform: scaleY(0);
+			top: 130px;
+			left: 120px;
+			border-left:2px solid #FFFFFF;
+			border-right:2px solid #FFFFFF;
+		}
+		div:nth-child(6):hover .box1{
+			transform: scaleX(1);
+		}
+	</style>
+	<body>
+		<div>
+			<img src="HTML5-05/img/pic1.jpg" />
+			<h2>平移动画</h2>
+			<p>简单CSS3过渡效果</p>
+		</div>
+		<div>
+			<img src="HTML5-05/img/pic2.jpg" />
+			<h2>平移动画</h2>
+			<p class="p1">多条文字简介</p>
+			<p class="p2">利用动画延迟</p>
+			<p class="p3">逐一飞出效果</p>
+		</div>
+		<div>
+			<img src="HTML5-05/img/pic2.jpg" />
+			<h2>平移动画</h2>
+			<p class="p1">多条文字简介</p>
+			<p class="p2">利用动画延迟</p>			
+		</div>
+		<div>
+			<img src="HTML5-05/img/pic5.jpg" />
+			<p class="p1">利用旋转</p>
+		</div>
+		<div>
+			<img src="HTML5-05/img/pic5.jpg" />
+			<p class="p1">利用skew消失</p>
+		</div>
+		<div>
+			<img src="HTML5-05/img/pic7.jpg" />
+			<span class="box1"></span>
+			<span class="box2"></span>
+		</div>
+	</body>
+</html>
