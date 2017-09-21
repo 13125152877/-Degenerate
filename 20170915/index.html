@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		body {
+		  background-color:#FFF;
+		  overflow: hidden;
+		  text-align:center;
+		}
+		
+		body,
+		html {
+		  height: 100%;
+		  width: 100%;
+		  margin: 0;
+		  padding: 0;
+		}
+		
+		
+		svg{
+		 position:absolute;
+		  width:100%;
+		  height:100%;
+		  visibility:hidden;
+		  transform:translate(-50%, 0%);
+		}
+		
+		.faceGroup{
+		 cursor:pointer;
+		}
+		.faceGroup, .panel{
+		 
+		  -webkit-tap-highlight-color:rgba(0,0,0,0);
+		}
+	</style>
+	<body>
+		<svg class="faceSVG" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+		 	<defs>
+		  	<clipPath id="happyMask">
+		   <circle class="happyMask" cx="467.68" cy="299.68" r="60" fill="#31b65a"/>
+		   </clipPath>
+		  </defs> 
+		<rect class="panel" x="292" y="254" width="216" height="92" rx="46" ry="46" fill="#f6f6f6" stroke="#E6E6E6" stroke-miterlimit="10" stroke-width="4"/> 
+		      <g class="faceGroup" clip-path="url(#happyMask)">
+		        <circle class="faceBg" cx="467.68" cy="299.68" r="60" fill="#0CCE6B"/>
+		       <path class="shadow" d="M468.42,360.58a60,60,0,0,1-54-33.83,60,60,0,0,0,104-59.34,60,60,0,0,1-50,93.17Z" fill="#31b65a"/>
+		        <g class="faceGroup">
+		          <g class="happyEyeGroup">
+		            <circle class="happyEyeL" cx="449.58" cy="290.24" r="7" fill="#FDFDFD"/>
+		            <circle class="happyEyeR" cx="486.42" cy="290.24" r="7" fill="#FDFDFD"/>
+		          </g>
+		          <path class="happyMouth" d="M486.5,305.24a18.5,18.5,0,0,1-37,0Z" fill="#FDFDFD"/>
+		         <path class="sadMouth" d="M485.5,324a18.51,18.51,0,1,0-37,0Z" fill="#FDFDFD"/>
+		        </g>
+		      </g>
+		 
+		 
+		</svg>
+	</body>
+	<script type="text/javascript">
+		//TweenLite.defaultOverwrite = "concurrent"
+var xmlns = "http://www.w3.org/2000/svg",
+  xlinkns = "http://www.w3.org/1999/xlink",
+  select = function(s) {
+    return document.querySelector(s);
+  },
+  selectAll = function(s) {
+    return document.querySelectorAll(s);
+  },
+    faceGroup = select('.faceGroup'),
+    shadow = select('.shadow'),
+    panel = select('.panel'),
+    faceBg = select('.faceBg'),
+    happyMouth = select('.happyMouth'),
+    happyEyeGroup = select('.happyEyeGroup'),
+    sadMouth = select('.sadMouth'),
+    happyEyeR = select('.happyEyeR'),
+    happyEyeL = select('.happyEyeL')
+  
+
+TweenMax.set('svg', {
+  visibility: 'visible'
+})
+
+TweenMax.set([happyEyeL, happyEyeR], {
+ transformOrigin:'50% 50%'
+})
+TweenMax.set(happyEyeGroup, {
+ transformOrigin:'50% 60%'
+})
+TweenLite.defaultEase = Expo.easeIn;
+
+var toggleTl = new TimelineMax({paused:true}).timeScale(4);
+toggleTl.to(happyMouth, 2, {
+ scaleX:0,
+ scaleY:1.23,
+ x:-56,
+ fill:'#E6E6E6'
+},'+=0')
+.to(happyEyeL, 2, {
+ scaleX:0,
+ scaleY:1.2,
+ x:-50,
+ y:2,
+ fill:'#E6E6E6'
+},'-=2')
+.to(happyEyeR, 2, {
+ scaleX:0,
+ scaleY:1.23,
+ x:-85,
+ fill:'#E6E6E6'
+},'-=2')
+
+.set(happyEyeR, {
+ scaleX:0,
+ scaleY:1.23,
+ x:60,
+ y:9,
+ fill:'#E6E6E6' 
+})
+
+.fromTo(sadMouth, 2, {
+ scaleX:0,
+ scaleY:0.8,
+ x:96,
+ y:6,
+ fill:'#E6E6E6'
+},{
+ x:0,
+ scaleX:1,
+ scaleY:0.8,
+ fill:'#FDFDFD',
+ y:6,
+ ease:Expo.easeOut
+})
+.fromTo(happyEyeL, 2, {
+ scaleX:0,
+ scaleY:1.2,
+ x:95,
+ y:4,
+ fill:'#E6E6E6'
+},{ 
+ scale:1,
+ x:0,
+ y:6,
+ fill:'#FDFDFD',
+ immediateRender:false,
+ ease:Expo.easeOut
+},'-=2')
+
+.to(happyEyeR, 2, {
+ scale:1,
+ x:0,
+ y:6,
+ fill:'#FDFDFD',
+ immediateRender:false,
+ ease:Expo.easeOut
+},'-=2')
+
+.to(faceGroup, 4, {
+ x:-132,
+ ease:Expo.easeInOut
+},'-=4')
+.to(faceBg, 4, {
+ fill:'#D80032',
+ ease:Expo.easeInOut
+},'-=4')
+.to(shadow, 4, {
+ fill:'#B51136',
+ ease:Expo.easeInOut
+},'-=4')
+
+
+faceGroup.onclick = function(){
+ if(toggleTl.isActive()){return};
+ if(toggleTl.time() > 0){
+TweenMax.set(happyEyeGroup, {
+ transformOrigin:'50% 50%'
+})  
+  toggleTl.reverse();
+  blink(0.152, 0);
+ } else{
+TweenMax.set(happyEyeGroup, {
+ transformOrigin:'50% 50%'
+})  
+  toggleTl.play()
+  blink(0.12, 0.12);
+ }
+}
+
+function blink(dur, rep){
+ TweenMax.to(happyEyeGroup, dur, {
+  scaleY:0.03,
+  repeat:1,
+  yoyo:true,
+  repeatDelay:rep
+ })
+}
+panel.onclick = faceGroup.onclick;
+	</script>
+</html>

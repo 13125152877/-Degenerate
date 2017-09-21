@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	//forEach 没有返回值
+	var animals = ['dog', 'cat', 'mouse'];
+	animals.forEach(function(item){
+	    console.log(item);
+	});
+	//遍历数组 并且返回新的数组
+	var numbers = [2, 4, 6, 8];
+	var doubleNums = numbers.map(function(element) {
+	    return element * 2;
+	});
+	console.log('doubleNums: ', doubleNums)
+	//filter 可以过滤掉数组中的某些数值
+	var scores = [3, 12, 5, 23, 19, 7];
+	var topScores = scores.filter(function(item){
+	    if (item > 10){
+	        return true;
+	    } else {
+	        return false;
+	    }
+	});
+	console.log('topScores: ', topScores);
+	//indexOF 返回元素下标 如果没有就返回-1
+	var a = [2, 9, 9, 18];
+	var i = a.indexOf(7);
+	console.log('i: ', i);
+	//every 如果每个元素都满足条件则返回true 每个有一个元素返回flase
+	var ages = [23, 19, 32, 44];
+	var olderThan18 = ages.every(function(element) {
+	    return element > 33;
+	});
+	console.log('olderThan18: ', olderThan18);
+	</script>
+</html>
